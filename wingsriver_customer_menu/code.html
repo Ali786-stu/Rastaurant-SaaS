@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu - WingsRiver</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-container": "#4e3d00",
+                "on-primary": "#ffffff",
+                "secondary-container": "#d3e8d5",
+                "on-secondary-fixed": "#0e1f13",
+                "tertiary-container": "#cba72f",
+                "surface-container": "#edeeed",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#b7ccb9",
+                "surface-container-highest": "#e1e3e2",
+                "surface-tint": "#436649",
+                "tertiary-fixed": "#ffe088",
+                "surface-dim": "#d9dad9",
+                "inverse-primary": "#a9d0ad",
+                "on-secondary-container": "#56695a",
+                "on-tertiary-fixed": "#241a00",
+                "on-secondary-fixed-variant": "#394b3d",
+                "outline": "#727971",
+                "surface-container-high": "#e7e8e7",
+                "on-tertiary": "#ffffff",
+                "background": "#f9f9f8",
+                "on-tertiary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#e9c349",
+                "on-primary-fixed-variant": "#2c4e33",
+                "on-surface-variant": "#424841",
+                "secondary": "#506354",
+                "on-error": "#ffffff",
+                "on-background": "#191c1c",
+                "primary-fixed-dim": "#a9d0ad",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "on-primary-fixed": "#00210b",
+                "primary": "#092d15",
+                "tertiary": "#735c00",
+                "surface-bright": "#f9f9f8",
+                "outline-variant": "#c2c8bf",
+                "on-surface": "#191c1c",
+                "inverse-on-surface": "#f0f1f0",
+                "error": "#ba1a1a",
+                "primary-fixed": "#c5edc8",
+                "surface-container-low": "#f3f4f3",
+                "surface-variant": "#e1e3e2",
+                "primary-container": "#214329",
+                "surface": "#f9f9f8",
+                "secondary-fixed": "#d3e8d5",
+                "on-primary-container": "#8ab08e",
+                "inverse-surface": "#2e3131"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "max-width": "1440px",
+                "margin-desktop": "40px",
+                "margin-mobile": "16px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-caps": [
+                        "JetBrains Mono"
+                ],
+                "headline-xl": [
+                        "Hanken Grotesk"
+                ],
+                "headline-xl-mobile": [
+                        "Hanken Grotesk"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Hanken Grotesk"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Hanken Grotesk"
+                ]
+        },
+        "fontSize": {
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-xl-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-2 text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<span class="font-headline-md text-headline-md font-bold">WingsRiver</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-caps text-label-caps">Table 7</div>
+<button aria-label="Notifications" class="text-on-primary hover:bg-white/10 transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Category Tabs -->
+<nav class="flex overflow-x-auto hide-scrollbar gap-base py-base mb-4 sticky top-16 z-40 bg-background/95 backdrop-blur-sm -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps transition-colors">Mains</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 font-label-caps text-label-caps transition-colors">Starters</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 font-label-caps text-label-caps transition-colors">Drinks</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 font-label-caps text-label-caps transition-colors">Desserts</button>
+</nav>
+<h1 class="font-headline-xl-mobile md:font-headline-lg text-headline-xl-mobile md:text-headline-lg mb-4 text-on-background">Main Courses</h1>
+<!-- Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-gutter">
+<!-- Item Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col">
+<div class="relative h-48 w-full bg-surface-variant">
+<img alt="Truffle Mushroom Risotto" class="w-full h-full object-cover rounded-t-xl" data-alt="A close-up, high-quality photograph of a creamy truffle mushroom risotto served in a shallow, matte white ceramic bowl. The dish is garnished with fresh parsley and shaved parmesan. The lighting is warm and natural, creating a soft, inviting atmosphere typical of a modern, upscale bistro. The background is slightly blurred, focusing entirely on the rich texture of the food. The overall color palette is earthy with warm white tones, perfectly matching a premium hospitality aesthetic." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMZqrOw4APsNpZBChZthfOjEM7Z14XhBBwngSK2UfcljYGUQBwT8MMOZaBIwr0ZTthrh37A5P8351Go_po10TV0rSEdponplzWdGvukKt5O17CdPt4cpZsTHthbEZ5LusdAFnk-x71OEhoUSZNIRlYxLCYKHG4SMDBUEdtakJa1UGqgNdF3BG5qgaBq9nNb3Zfn7qDrJRfO50wKO-CR9UAF84_P4jMJaCje5sBObT_keCcPNcmEqP1z6ee5xeF_G1cpIIItEWeAXE"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-secondary-container/90 text-on-secondary-container px-2 py-1 rounded-full font-body-sm text-body-sm backdrop-blur-sm">Vegetarian</span>
+<span class="bg-surface/90 text-on-surface px-2 py-1 rounded-full font-body-sm text-body-sm backdrop-blur-sm">GF</span>
+</div>
+</div>
+<div class="p-base flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1">Truffle Risotto</h2>
+<span class="font-headline-md text-headline-md text-primary">$24.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-base flex-grow">Creamy Arborio rice slow-cooked with wild mushrooms, finished with white truffle oil and aged Parmesan.</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-on-primary font-label-caps text-label-caps py-3 rounded-lg transition-colors border-b-2 border-on-primary-fixed-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                        Add to Order
+                    </button>
+</div>
+</article>
+<!-- Item Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col">
+<div class="relative h-48 w-full bg-surface-variant">
+<img alt="Grilled Salmon" class="w-full h-full object-cover rounded-t-xl" data-alt="A beautifully plated grilled salmon fillet with perfectly defined grill marks, resting on a bed of vibrant green asparagus and quinoa. A wedge of charred lemon sits to the side. The scene is brightly lit with a modern, clean light-mode aesthetic, utilizing natural sunlight that highlights the moisture and freshness of the fish. The setting evokes a refined dining experience with a warm, welcoming vibe." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsc8w3qGGVdyAXBW6wzAkxCtQnqQtD8yJrc114wZruwF1gaLU-cqVQ7bXUlAY1PqbZZL22fxRXsPsOgBDKJHx78gd1uV5Cs5VVKqfJPVXacokI6nUQV_Z5HS2aGm-2o1p_ESh2ukGR5KcV8YWj1-I723gdA2xm8TmDpxFQqWTxx3-LzhtgGiWDYwDYIeRFzH1UiH286EJxa2I3Mt3JTiBPf7FcLNDMg9emVaaYNczP-RaYqtnV_iup1TX3xF-hE-TQNlOFd3dh9As"/>
+</div>
+<div class="p-base flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1">Grilled Salmon</h2>
+<span class="font-headline-md text-headline-md text-primary">$28.50</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-base flex-grow">Atlantic salmon fillet with lemon herb butter, served over seasonal roasted vegetables and quinoa.</p>
+<!-- Quantity Selector (Active state example) -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg p-1">
+<button aria-label="Decrease quantity" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-label-caps text-label-caps text-on-surface px-4">1</span>
+<button aria-label="Increase quantity" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item Card 3 (Sold Out) -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col opacity-60 grayscale-[50%] pointer-events-none">
+<div class="relative h-48 w-full bg-surface-variant">
+<div class="absolute inset-0 bg-surface/50 z-10 flex items-center justify-center backdrop-blur-[2px]">
+<span class="bg-error text-on-error px-4 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-wider">Sold Out</span>
+</div>
+<img alt="Bistro Burger" class="w-full h-full object-cover rounded-t-xl" data-alt="A gourmet beef burger stacked high with melted cheddar cheese, fresh lettuce, tomato, and a brioche bun, presented on a wooden board. The lighting is moody but warm, emphasizing the rich textures and colors of the ingredients. The image is styled to fit a premium casual dining atmosphere, utilizing soft shadows and a shallow depth of field. The overall aesthetic feels appetizing and professionally composed." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF8J5yRdalRn4fIdAzDp9Nt_8NCQyrezW59RffWgkruOksJJ7V4JddyLV0bvs-R0RDbM3DldS_jHiZCcolt3je1zYUUbmqmrVVMKCFLt9HyjwoBmuB4odNAej5Pw86HwyxVt5dMszYmFbjl31EZq1BBXjwgsAPJl2RpVHhtb09GNJePskZakR3mEw7eq6bIhI1w7MB61eG_lgVWye3a75UV61VkAjCiBz9uNyW3yw7gjNUi31tp-QVtPgIzhRC_nUuWC0ifwpCYjg"/>
+</div>
+<div class="p-base flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1">Signature Burger</h2>
+<span class="font-headline-md text-headline-md text-on-surface-variant">$18.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-base flex-grow">Wagyu beef patty, aged cheddar, caramelized onions, and house sauce on a toasted brioche bun.</p>
+<button class="w-full bg-surface-variant text-on-surface-variant font-label-caps text-label-caps py-3 rounded-lg flex items-center justify-center cursor-not-allowed" disabled="">
+                        Unavailable
+                    </button>
+</div>
+</article>
+<!-- Item Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col">
+<div class="relative h-48 w-full bg-surface-variant">
+<img alt="Quinoa Salad" class="w-full h-full object-cover rounded-t-xl" data-alt="A vibrant, fresh salad bowl containing mixed greens, quinoa, sliced avocado, cherry tomatoes, and roasted chickpeas. The dish is presented in an earthy, handmade ceramic bowl resting on a light wooden table. The lighting is bright, airy, and inviting, characteristic of a clean, modern aesthetic. The color palette focuses on fresh greens and warm neutrals, conveying health and premium quality." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4_d5ZClzLyM4nGRPfIbTkkBxUn7ZPkpAfd-sq0iGJ0ptKO70LZ1YR7HGU5U_AtqtNy9jQ-d_NXLcuT5rl-hVMEZ_juRyeA3Ca70YHA_dIzFnNL0sLxkVGcYaJQmoqZmW_EQfqvMNibKyHMkjga1CYMrzKoe3duFCFGtJOkLoa9gmufk8Z98SVAvVzLfkUzNZsE5itmmSuSSb77-Gwpac0B-6lLZtklK2P_SuFZczeNTix_ASDU_8icd5LKETG9r3-9vqD7DFShTs"/>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-secondary-container/90 text-on-secondary-container px-2 py-1 rounded-full font-body-sm text-body-sm backdrop-blur-sm">Vegan</span>
+</div>
+</div>
+<div class="p-base flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface line-clamp-1">Harvest Bowl</h2>
+<span class="font-headline-md text-headline-md text-primary">$16.50</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-base flex-grow">Roasted sweet potatoes, quinoa, kale, avocado, and toasted seeds with a tahini lemon dressing.</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-on-primary font-label-caps text-label-caps py-3 rounded-lg transition-colors border-b-2 border-on-primary-fixed-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                        Add to Order
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- Floating Cart Bar (Contextual) -->
+<div class="fixed bottom-20 left-0 w-full px-margin-mobile md:px-margin-desktop z-40 md:hidden pointer-events-none">
+<div class="max-w-md mx-auto bg-inverse-surface text-inverse-on-surface rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.12)] p-4 flex items-center justify-between pointer-events-auto active:scale-95 transition-transform cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center font-label-caps text-label-caps">1</div>
+<span class="font-label-caps text-label-caps">View Cart</span>
+</div>
+<span class="font-headline-md text-headline-md">$28.50</span>
+</div>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-primary dark:bg-primary backdrop-blur-md fixed bottom-0 w-full z-50 rounded-t-xl shadow-[0_-4px_12px_rgba(0,0,0,0.06)] flex justify-around items-center h-16 pb-safe px-4 md:hidden">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 duration-200 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-body-sm text-body-sm">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-primary/70 hover:text-on-primary active:scale-90 duration-200 transition-transform" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-body-sm text-body-sm mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-primary/70 hover:text-on-primary active:scale-90 duration-200 transition-transform relative" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-sm text-body-sm mt-1">Orders</span>
+<span class="absolute top-0 right-2 w-2 h-2 bg-error rounded-full"></span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-primary/70 hover:text-on-primary active:scale-90 duration-200 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-sm text-body-sm mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WingsRiver - Create Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#727971",
+                        "surface-dim": "#d9dad9",
+                        "on-background": "#191c1c",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#424841",
+                        "surface-variant": "#e1e3e2",
+                        "inverse-primary": "#a9d0ad",
+                        "secondary-fixed": "#d3e8d5",
+                        "error-container": "#ffdad6",
+                        "primary": "#092d15",
+                        "outline-variant": "#c2c8bf",
+                        "on-secondary-fixed-variant": "#394b3d",
+                        "inverse-on-surface": "#f0f1f0",
+                        "on-secondary-container": "#56695a",
+                        "on-primary-container": "#8ab08e",
+                        "background": "#f9f9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#c5edc8",
+                        "tertiary-container": "#cba72f",
+                        "secondary": "#506354",
+                        "on-surface": "#191c1c",
+                        "secondary-container": "#d3e8d5",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-fixed-variant": "#2c4e33",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#a9d0ad",
+                        "on-secondary-fixed": "#0e1f13",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#4e3d00",
+                        "surface-container": "#edeeed",
+                        "surface-bright": "#f9f9f8",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#ffe088",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e1e3e2",
+                        "surface-tint": "#436649",
+                        "surface-container-high": "#e7e8e7",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f3f4f3",
+                        "secondary-fixed-dim": "#b7ccb9",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-primary-fixed": "#00210b",
+                        "primary-container": "#214329",
+                        "surface": "#f9f9f8",
+                        "inverse-surface": "#2e3131",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "max-width": "1440px",
+                        "margin-desktop": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-xl-mobile": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 4px 20px rgba(33, 67, 41, 0.05);
+        }
+        
+        .input-field:focus {
+            border-bottom-color: #092d15 !important;
+            box-shadow: 0 1px 0 0 #092d15 !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex items-center justify-center p-4 md:p-8 font-body-md relative overflow-hidden">
+<!-- Atmospheric Background Decoration -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary-fixed-dim/20 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary-fixed/30 blur-[100px]"></div>
+</div>
+<!-- Main Container -->
+<main class="w-full max-w-md mx-auto z-10">
+<!-- Brand Header -->
+<div class="text-center mb-8">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-container text-on-primary mb-4">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2 hidden md:block">WingsRiver</h1>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-primary mb-2 md:hidden">WingsRiver</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Create an account to manage your operations.</p>
+</div>
+<!-- Registration Card -->
+<div class="glass-card rounded-xl p-8 w-full">
+<!-- Quick Actions -->
+<button class="w-full flex items-center justify-center gap-3 bg-surface-container-lowest border border-outline-variant rounded-lg py-3 px-4 hover:bg-surface-variant/20 transition-colors mb-6 group" type="button">
+<!-- SVG Google Icon (as placeholder since we can't easily fetch an external reliable one without data uris) -->
+<svg class="w-5 h-5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Sign up with Google</span>
+</button>
+<!-- Divider -->
+<div class="flex items-center gap-4 mb-6">
+<div class="h-px bg-outline-variant flex-1"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Or register with email</span>
+<div class="h-px bg-outline-variant flex-1"></div>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-5" method="POST">
+<!-- Full Name -->
+<div class="space-y-1">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase" for="fullName">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline ml-3" style="font-size: 20px;">person</span>
+<input class="input-field block w-full bg-[#F1F3F1] border-0 border-b border-outline-variant text-on-surface font-body-md text-body-md py-2.5 pl-10 pr-3 focus:ring-0 transition-colors" id="fullName" name="fullName" placeholder="John Doe" required="" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div class="space-y-1">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline ml-3" style="font-size: 20px;">mail</span>
+<input class="input-field block w-full bg-[#F1F3F1] border-0 border-b border-outline-variant text-on-surface font-body-md text-body-md py-2.5 pl-10 pr-3 focus:ring-0 transition-colors" id="email" name="email" placeholder="john@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-1">
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline ml-3" style="font-size: 20px;">lock</span>
+<input class="input-field block w-full bg-[#F1F3F1] border-0 border-b border-outline-variant text-on-surface font-body-md text-body-md py-2.5 pl-10 pr-10 focus:ring-0 transition-colors" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 mr-3 text-outline hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Terms -->
+<div class="flex items-start pt-2">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 rounded border-outline-variant text-primary-container focus:ring-primary-container bg-surface-container-lowest" id="terms" name="terms" required="" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                            I agree to the <a class="text-primary hover:underline font-medium" href="#">Terms of Service</a> and <a class="text-primary hover:underline font-medium" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-4">
+<button class="w-full flex items-center justify-center gap-2 bg-[#214329] text-on-primary rounded-lg py-3 px-4 font-body-md text-body-md font-medium hover:bg-primary transition-colors shadow-md shadow-primary-container/20" type="submit">
+                        Create Account
+                        <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Footer Link -->
+<p class="mt-8 text-center font-body-sm text-body-sm text-on-surface-variant">
+            Already have an account? 
+            <a class="text-primary font-medium hover:underline transition-all" href="#">Log in here</a>
+</p>
+</main>
+</body></html>

@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f8;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 20px rgba(33, 67, 41, 0.05);
+}
+
+.input-field:focus {
+  border-bottom-color: #092d15 !important;
+  box-shadow: 0 1px 0 0 #092d15 !important;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.status-chip-pending { background-color: rgba(114, 121, 113, 0.1); color: #727971; }
+.status-chip-preparing { background-color: rgba(9, 45, 21, 0.1); color: #092d15; }
+.status-chip-ready { background-color: rgba(80, 99, 84, 0.1); color: #506354; }

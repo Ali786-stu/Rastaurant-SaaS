@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WingsRiver - Analytics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-container": "#4e3d00",
+                "on-primary": "#ffffff",
+                "secondary-container": "#d3e8d5",
+                "on-secondary-fixed": "#0e1f13",
+                "tertiary-container": "#cba72f",
+                "surface-container": "#edeeed",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#b7ccb9",
+                "surface-container-highest": "#e1e3e2",
+                "surface-tint": "#436649",
+                "tertiary-fixed": "#ffe088",
+                "surface-dim": "#d9dad9",
+                "inverse-primary": "#a9d0ad",
+                "on-secondary-container": "#56695a",
+                "on-tertiary-fixed": "#241a00",
+                "on-secondary-fixed-variant": "#394b3d",
+                "outline": "#727971",
+                "surface-container-high": "#e7e8e7",
+                "on-tertiary": "#ffffff",
+                "background": "#f9f9f8",
+                "on-tertiary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#e9c349",
+                "on-primary-fixed-variant": "#2c4e33",
+                "on-surface-variant": "#424841",
+                "secondary": "#506354",
+                "on-error": "#ffffff",
+                "on-background": "#191c1c",
+                "primary-fixed-dim": "#a9d0ad",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "on-primary-fixed": "#00210b",
+                "primary": "#092d15",
+                "tertiary": "#735c00",
+                "surface-bright": "#f9f9f8",
+                "outline-variant": "#c2c8bf",
+                "on-surface": "#191c1c",
+                "inverse-on-surface": "#f0f1f0",
+                "error": "#ba1a1a",
+                "primary-fixed": "#c5edc8",
+                "surface-container-low": "#f3f4f3",
+                "surface-variant": "#e1e3e2",
+                "primary-container": "#214329",
+                "surface": "#f9f9f8",
+                "secondary-fixed": "#d3e8d5",
+                "on-primary-container": "#8ab08e",
+                "inverse-surface": "#2e3131"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "max-width": "1440px",
+                "margin-desktop": "40px",
+                "margin-mobile": "16px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-caps": [
+                        "JetBrains Mono"
+                ],
+                "headline-xl": [
+                        "Hanken Grotesk"
+                ],
+                "headline-xl-mobile": [
+                        "Hanken Grotesk"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Hanken Grotesk"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Hanken Grotesk"
+                ]
+        },
+        "fontSize": {
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-xl-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Level 1 Shadow from guidelines */
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-hidden flex h-screen">
+<!-- Navigation Drawer (SideNav) -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-low border-r border-outline-variant/20 py-stack-lg">
+<!-- Header Profile -->
+<div class="px-6 mb-stack-lg flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md font-bold">
+                W
+            </div>
+<div>
+<div class="font-headline-md text-headline-md text-primary font-bold text-xl">WingsRiver</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Station 01 • Online</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-transform hover:translate-x-1 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-transform hover:translate-x-1 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+                        Live Orders
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-transform hover:translate-x-1 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+                        Menu Editor
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-transform hover:translate-x-1 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                        Table Map
+                    </a>
+</li>
+<li>
+<!-- Active State -->
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-r-full py-3 px-6 mr-4 font-label-md text-label-md opacity-80 pointer-events-none" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="analytics" data-weight="fill">analytics</span>
+                        Analytics
+                    </a>
+</li>
+</ul>
+</div>
+<!-- Footer Link -->
+<div class="mt-auto">
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-transform hover:translate-x-1 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 h-full overflow-y-auto flex flex-col relative bg-background">
+<!-- Header Actions -->
+<header class="flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop py-6 sticky top-0 bg-background/80 backdrop-blur-md z-30">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Analytics Overview</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Thursday, October 26, 2023</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-full border-b-2 border-on-primary-fixed-variant hover:bg-primary/90 active:border-b-0 active:translate-y-[2px] transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                Export CSV
+            </button>
+</header>
+<!-- Dashboard Grid -->
+<div class="p-container-margin-mobile md:p-container-margin-desktop pt-0 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Key Metrics Grid (Span Full, nested grid) -->
+<div class="col-span-1 md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant/10 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="font-label-md text-label-md text-on-surface-variant">Today's Revenue</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
+</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">$1.2k</div>
+<div class="flex items-center gap-1 text-secondary mt-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+<span>+8.4% from yesterday</span>
+</div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant/10 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="font-label-md text-label-md text-on-surface-variant">Orders</div>
+<div class="w-8 h-8 rounded-full bg-primary-container/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="receipt_long">receipt_long</span>
+</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">45</div>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_flat">trending_flat</span>
+<span>On par with average</span>
+</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant/10 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 bottom-0 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px] translate-x-4 translate-y-4" data-icon="table_restaurant">table_restaurant</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="font-label-md text-label-md text-on-surface-variant">Active Tables</div>
+<div class="px-2 py-1 bg-secondary/10 text-secondary rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                            Live
+                        </div>
+</div>
+<div class="relative z-10">
+<div class="font-display-lg text-display-lg text-on-surface">12<span class="text-on-surface-variant font-headline-md text-headline-md ml-1">/ 24</span></div>
+<div class="text-on-surface-variant mt-1 font-label-sm text-label-sm">
+                            50% Capacity
+                        </div>
+</div>
+</div>
+</div>
+<!-- Revenue Bar Chart (Span 8) -->
+<div class="col-span-1 md:col-span-8 bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant/10 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Revenue Trends</h2>
+<select class="bg-surface-container rounded-lg border-none text-on-surface font-label-sm text-label-sm py-1 pl-3 pr-8 focus:ring-1 focus:ring-primary">
+<option>This Week</option>
+<option>Last Week</option>
+<option>This Month</option>
+</select>
+</div>
+<!-- Mock Chart Area -->
+<div class="flex-1 flex items-end gap-2 md:gap-4 h-64 mt-4 pb-6 relative border-b border-outline-variant/20">
+<!-- Y-Axis Guides -->
+<div class="absolute w-full h-full flex flex-col justify-between pb-6 pointer-events-none">
+<div class="w-full border-t border-outline-variant/10"></div>
+<div class="w-full border-t border-outline-variant/10"></div>
+<div class="w-full border-t border-outline-variant/10"></div>
+<div class="w-full border-t border-outline-variant/10"></div>
+</div>
+<!-- Bars -->
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full max-w-[40px] bg-primary-container/60 rounded-t-md group-hover:bg-primary-container transition-colors" style="height: 40%;"></div>
+<span class="text-on-surface-variant font-label-sm text-label-sm mt-2 absolute bottom-0">Mon</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full max-w-[40px] bg-primary-container/60 rounded-t-md group-hover:bg-primary-container transition-colors" style="height: 55%;"></div>
+<span class="text-on-surface-variant font-label-sm text-label-sm mt-2 absolute bottom-0">Tue</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full max-w-[40px] bg-primary-container/60 rounded-t-md group-hover:bg-primary-container transition-colors" style="height: 45%;"></div>
+<span class="text-on-surface-variant font-label-sm text-label-sm mt-2 absolute bottom-0">Wed</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full max-w-[40px] bg-primary rounded-t-md shadow-sm" style="height: 80%;"></div>
+<span class="text-primary font-label-sm text-label-sm mt-2 absolute bottom-0 font-bold">Thu</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full max-w-[40px] bg-surface-variant rounded-t-md" style="height: 10%;"></div>
+<span class="text-on-surface-variant font-label-sm text-label-sm mt-2 absolute bottom-0">Fri</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full max-w-[40px] bg-surface-variant rounded-t-md" style="height: 5%;"></div>
+<span class="text-on-surface-variant font-label-sm text-label-sm mt-2 absolute bottom-0">Sat</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full max-w-[40px] bg-surface-variant rounded-t-md" style="height: 5%;"></div>
+<span class="text-on-surface-variant font-label-sm text-label-sm mt-2 absolute bottom-0">Sun</span>
+</div>
+</div>
+</div>
+<!-- Top Items List (Span 4) -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant/10 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Top Items</h2>
+<button class="text-primary hover:underline font-label-sm text-label-sm">View All</button>
+</div>
+<div class="flex-1 flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="local_dining">local_dining</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Truffle Burger</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">24 ordered</div>
+</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface font-bold">
+                            $432
+                        </div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="local_pizza">local_pizza</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Margherita Pizza</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">18 ordered</div>
+</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface font-bold">
+                            $270
+                        </div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="local_cafe">local_cafe</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Artisan Latte</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">32 ordered</div>
+</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface font-bold">
+                            $160
+                        </div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="tapas">tapas</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Calamari Fritti</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">12 ordered</div>
+</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface font-bold">
+                            $144
+                        </div>
+</div>
+</div>
+</div>
+<!-- Peak Hours Heatmap (Span 12) -->
+<div class="col-span-1 md:col-span-12 bg-surface-container-lowest rounded-xl p-6 card-shadow border border-outline-variant/10 mb-stack-lg">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Peak Hours (Order Volume)</h2>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Low</span>
+<div class="flex gap-1">
+<div class="w-4 h-4 rounded-sm bg-primary-container/10"></div>
+<div class="w-4 h-4 rounded-sm bg-primary-container/40"></div>
+<div class="w-4 h-4 rounded-sm bg-primary-container/70"></div>
+<div class="w-4 h-4 rounded-sm bg-primary"></div>
+</div>
+<span>High</span>
+</div>
+</div>
+<!-- Heatmap Grid Mockup -->
+<div class="w-full overflow-x-auto pb-2">
+<div class="min-w-[700px]">
+<!-- Hours Header -->
+<div class="flex ml-16 mb-2 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex-1 text-center">11a</div>
+<div class="flex-1 text-center">12p</div>
+<div class="flex-1 text-center">1p</div>
+<div class="flex-1 text-center">2p</div>
+<div class="flex-1 text-center">...</div>
+<div class="flex-1 text-center">5p</div>
+<div class="flex-1 text-center">6p</div>
+<div class="flex-1 text-center">7p</div>
+<div class="flex-1 text-center">8p</div>
+<div class="flex-1 text-center">9p</div>
+</div>
+<!-- Days Rows -->
+<div class="space-y-2">
+<!-- Mon -->
+<div class="flex items-center gap-4">
+<div class="w-12 font-label-sm text-label-sm text-on-surface-variant text-right">Mon</div>
+<div class="flex-1 flex gap-1">
+<div class="flex-1 h-8 rounded bg-primary-container/20 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/60 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/50 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/20 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+<div class="flex-1 h-8 rounded bg-surface-variant/50 border border-dashed border-outline-variant/30 flex items-center justify-center text-outline-variant text-[10px]">Close</div>
+<div class="flex-1 h-8 rounded bg-primary-container/30 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/70 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+<div class="flex-1 h-8 rounded bg-primary hover:ring-2 ring-primary transition-all cursor-pointer relative group">
+<!-- Tooltip mock -->
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-inverse-surface text-inverse-on-surface text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-10 transition-opacity">
+                                            32 Orders
+                                        </div>
+</div>
+<div class="flex-1 h-8 rounded bg-primary-container/80 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/40 hover:ring-2 ring-primary transition-all cursor-pointer"></div>
+</div>
+</div>
+<!-- Tue -->
+<div class="flex items-center gap-4">
+<div class="w-12 font-label-sm text-label-sm text-on-surface-variant text-right">Tue</div>
+<div class="flex-1 flex gap-1">
+<div class="flex-1 h-8 rounded bg-primary-container/10"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/50"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/40"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/20"></div>
+<div class="flex-1 h-8 rounded bg-surface-variant/50 border border-dashed border-outline-variant/30"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/20"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/60"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/90"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/70"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/30"></div>
+</div>
+</div>
+<!-- Wed -->
+<div class="flex items-center gap-4">
+<div class="w-12 font-label-sm text-label-sm text-on-surface-variant text-right">Wed</div>
+<div class="flex-1 flex gap-1">
+<div class="flex-1 h-8 rounded bg-primary-container/20"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/70"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/60"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/30"></div>
+<div class="flex-1 h-8 rounded bg-surface-variant/50 border border-dashed border-outline-variant/30"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/40"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/80"></div>
+<div class="flex-1 h-8 rounded bg-primary"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/90"></div>
+<div class="flex-1 h-8 rounded bg-primary-container/40"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

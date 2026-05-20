@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WingsRiver - Live Orders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-container": "#4e3d00",
+                "on-primary": "#ffffff",
+                "secondary-container": "#d3e8d5",
+                "on-secondary-fixed": "#0e1f13",
+                "tertiary-container": "#cba72f",
+                "surface-container": "#edeeed",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#b7ccb9",
+                "surface-container-highest": "#e1e3e2",
+                "surface-tint": "#436649",
+                "tertiary-fixed": "#ffe088",
+                "surface-dim": "#d9dad9",
+                "inverse-primary": "#a9d0ad",
+                "on-secondary-container": "#56695a",
+                "on-tertiary-fixed": "#241a00",
+                "on-secondary-fixed-variant": "#394b3d",
+                "outline": "#727971",
+                "surface-container-high": "#e7e8e7",
+                "on-tertiary": "#ffffff",
+                "background": "#f9f9f8",
+                "on-tertiary-fixed-variant": "#574500",
+                "tertiary-fixed-dim": "#e9c349",
+                "on-primary-fixed-variant": "#2c4e33",
+                "on-surface-variant": "#424841",
+                "secondary": "#506354",
+                "on-error": "#ffffff",
+                "on-background": "#191c1c",
+                "primary-fixed-dim": "#a9d0ad",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "on-primary-fixed": "#00210b",
+                "primary": "#092d15",
+                "tertiary": "#735c00",
+                "surface-bright": "#f9f9f8",
+                "outline-variant": "#c2c8bf",
+                "on-surface": "#191c1c",
+                "inverse-on-surface": "#f0f1f0",
+                "error": "#ba1a1a",
+                "primary-fixed": "#c5edc8",
+                "surface-container-low": "#f3f4f3",
+                "surface-variant": "#e1e3e2",
+                "primary-container": "#214329",
+                "surface": "#f9f9f8",
+                "secondary-fixed": "#d3e8d5",
+                "on-primary-container": "#8ab08e",
+                "inverse-surface": "#2e3131"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "max-width": "1440px",
+                "margin-desktop": "40px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "stack-lg": "32px",
+                "container-margin-desktop": "40px",
+                "container-margin-mobile": "16px",
+                "stack-sm": "8px",
+                "unit": "8px",
+                "stack-md": "16px"
+        },
+        "fontFamily": {
+                "label-caps": [
+                        "JetBrains Mono"
+                ],
+                "headline-xl": [
+                        "Hanken Grotesk"
+                ],
+                "headline-xl-mobile": [
+                        "Hanken Grotesk"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Hanken Grotesk"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Hanken Grotesk"
+                ],
+                "headline-lg-mobile": ["Inter"],
+                "label-sm": ["Inter"],
+                "display-lg": ["Inter"],
+                "label-md": ["Inter"]
+        },
+        "fontSize": {
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-xl-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+        .status-chip-pending { background-color: rgba(114, 121, 113, 0.1); color: #727971; }
+        .status-chip-preparing { background-color: rgba(9, 45, 21, 0.1); color: #092d15; }
+        .status-chip-ready { background-color: rgba(80, 99, 84, 0.1); color: #506354; }
+        
+        /* Subtle scrollbar for lists */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e1e3e2;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen overflow-hidden flex">
+<!-- NavigationDrawer (Staff Sidebar) -->
+<nav class="hidden md:flex flex-col bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant/20 fixed left-0 top-0 h-full w-64 z-40 py-stack-lg">
+<!-- Header: Profile -->
+<div class="px-6 mb-8 flex flex-col items-start">
+<div class="w-12 h-12 rounded-full bg-surface-variant overflow-hidden mb-4">
+<img alt="Staff Member" class="w-full h-full object-cover" data-alt="A close up portrait of a professional kitchen manager wearing a clean white chef coat. The lighting is bright and warm, typical of a modern culinary environment. The manager has a friendly yet focused expression. The background is slightly blurred, hinting at a bustling restaurant setting without being distracting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-qkQXEujwHXh5w4Xp1343GWnTrr14oUp6IIE9g18latJpFKfNhvyx8Fm2KjykmPq2zTPnC0UREuJQ2QcZacDYUd2BbZQaOxkHBqc1bZuriLQhQrKFdA8OTrap1CAuw9HhlSORg6BZ24EUDC4TTP-7bPyfMudySnlzyXNkjhg-3CmHfHQTJjr8hWNWfJElLW0-BwiLoGKQRm4uOxFtMQAw85NNrNX__uoGMI6aYpFitTduqZof2xp0uMAw-XapwZVO3QgjSuSAuCw"/>
+</div>
+<h2 class="text-primary font-bold text-xl">WingsRiver</h2>
+<div class="mt-2">
+<p class="font-headline-md text-headline-md text-on-surface">Kitchen Manager</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Station 01</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span> Online
+                </p>
+</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-2 flex-grow overflow-y-auto custom-scrollbar">
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-r-full py-3 px-6 mr-4 font-label-md text-label-md opacity-80 transition-opacity hover:opacity-100" href="#">
+<span class="material-symbols-outlined">pending_actions</span>
+                    Live Orders
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+                    Menu Editor
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+                    Table Map
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Analytics
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col h-full bg-background relative">
+<!-- TopAppBar (Mobile & Utility) -->
+<header class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md fixed top-0 w-full md:w-[calc(100%-16rem)] z-50 border-b border-outline-variant/30 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Icon (Hidden on Desktop) -->
+<button class="md:hidden text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim md:hidden">WingsRiver</h1>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface hidden md:block">Live Orders</h1>
+</div>
+<div class="flex items-center gap-4">
+<!-- Sound/Notification Alert -->
+<button class="relative p-2 text-on-surface-variant hover:bg-surface-variant/20 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">notifications_active</span>
+<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full animate-pulse border-2 border-surface"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 mt-16 overflow-y-auto custom-scrollbar p-container-margin-mobile md:p-container-margin-desktop">
+<!-- Filters -->
+<div class="mb-stack-lg sticky top-0 bg-background/95 backdrop-blur z-10 py-2 border-b border-surface-variant">
+<div class="flex gap-2 overflow-x-auto custom-scrollbar pb-2">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap transition-transform hover:scale-95 active:scale-90">All (8)</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 font-label-md text-label-md whitespace-nowrap transition-transform hover:scale-95 active:scale-90 flex items-center gap-2">
+                        Pending <span class="bg-surface-variant text-on-surface rounded-full px-2 py-0.5 text-xs">2</span>
+</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 font-label-md text-label-md whitespace-nowrap transition-transform hover:scale-95 active:scale-90 flex items-center gap-2">
+                        Preparing <span class="bg-surface-variant text-on-surface rounded-full px-2 py-0.5 text-xs">5</span>
+</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant/20 font-label-md text-label-md whitespace-nowrap transition-transform hover:scale-95 active:scale-90 flex items-center gap-2">
+                        Ready <span class="bg-surface-variant text-on-surface rounded-full px-2 py-0.5 text-xs">1</span>
+</button>
+</div>
+</div>
+<!-- Order Grid (Bento/Masonry feel) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-gutter items-start">
+<!-- Card 1: Pending (Urgent) -->
+<div class="bg-surface-container-lowest rounded-xl card-shadow p-4 flex flex-col gap-4 border-l-4 border-error">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-headline-md text-headline-md text-on-surface">Table 12</span>
+<span class="status-chip-pending font-label-sm text-label-sm px-2 py-1 rounded-full">Pending</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2 mins ago (18:45)
+                            </p>
+</div>
+<span class="font-headline-lg text-headline-lg text-primary font-bold">#1042</span>
+</div>
+<div class="bg-surface rounded-lg p-3">
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between items-start border-b border-surface-variant pb-2 last:border-0 last:pb-0">
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="text-primary mr-1">2x</span> Truffle Fries</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Extra crispy</p>
+</div>
+</li>
+<li class="flex justify-between items-start border-b border-surface-variant pb-2 last:border-0 last:pb-0">
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="text-primary mr-1">1x</span> Wagyu Burger</p>
+<p class="font-body-sm text-body-sm text-on-error flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[14px]">warning</span> No Onions, Medium Rare</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-2 border-b-2 border-on-primary-fixed-variant active:border-b-0 active:translate-y-[2px]">
+<span class="material-symbols-outlined">done</span>
+                            Accept Order
+                        </button>
+</div>
+</div>
+<!-- Card 2: Preparing -->
+<div class="bg-surface-container-lowest rounded-xl card-shadow p-4 flex flex-col gap-4 border-l-4 border-primary">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-headline-md text-headline-md text-on-surface">Table 04</span>
+<span class="status-chip-preparing font-label-sm text-label-sm px-2 py-1 rounded-full">Preparing</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 15 mins ago (18:32)
+                            </p>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface-variant font-bold">#1038</span>
+</div>
+<div class="bg-surface rounded-lg p-3">
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between items-start border-b border-surface-variant pb-2 last:border-0 last:pb-0 opacity-50 line-through">
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="text-primary mr-1">1x</span> Caesar Salad</p>
+</div>
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+</li>
+<li class="flex justify-between items-start border-b border-surface-variant pb-2 last:border-0 last:pb-0">
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="text-primary mr-1">1x</span> Ribeye Steak</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Medium</p>
+</div>
+</li>
+<li class="flex justify-between items-start border-b border-surface-variant pb-2 last:border-0 last:pb-0">
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="text-primary mr-1">1x</span> Roasted Vegetables</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-auto pt-2 flex gap-2">
+<button class="flex-1 bg-surface-variant text-on-surface font-label-md text-label-md py-3 rounded-lg hover:bg-surface-dim transition-colors">
+                            Print Ticket
+                        </button>
+<button class="flex-[2] bg-primary-container text-on-primary-container font-label-md text-label-md py-3 rounded-lg hover:bg-primary transition-colors hover:text-on-primary flex items-center justify-center gap-2 border-b-2 border-primary active:border-b-0 active:translate-y-[2px]">
+<span class="material-symbols-outlined">room_service</span>
+                            Mark Ready
+                        </button>
+</div>
+</div>
+<!-- Card 3: Ready -->
+<div class="bg-surface-container-lowest rounded-xl card-shadow p-4 flex flex-col gap-4 border-l-4 border-secondary opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-headline-md text-headline-md text-on-surface">Table 08</span>
+<span class="status-chip-ready font-label-sm text-label-sm px-2 py-1 rounded-full">Ready</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 22 mins ago (18:25)
+                            </p>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface-variant font-bold">#1035</span>
+</div>
+<div class="bg-surface rounded-lg p-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Awaiting pickup by runner.</p>
+<ul class="flex flex-col gap-1">
+<li class="font-body-sm text-body-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-secondary">check</span> 2x Lemonade</li>
+<li class="font-body-sm text-body-sm text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-secondary">check</span> 1x Salmon Filet</li>
+</ul>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full bg-surface text-secondary font-label-md text-label-md py-3 rounded-lg border border-secondary hover:bg-secondary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                            Mark Served
+                        </button>
+</div>
+</div>
+<!-- Card 4: Preparing -->
+<div class="bg-surface-container-lowest rounded-xl card-shadow p-4 flex flex-col gap-4 border-l-4 border-primary">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-headline-md text-headline-md text-on-surface">Bar</span>
+<span class="status-chip-preparing font-label-sm text-label-sm px-2 py-1 rounded-full">Preparing</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 8 mins ago (18:39)
+                            </p>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface-variant font-bold">#1040</span>
+</div>
+<div class="bg-surface rounded-lg p-3">
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between items-start border-b border-surface-variant pb-2 last:border-0 last:pb-0">
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="text-primary mr-1">3x</span> Craft Beer - IPA</p>
+</div>
+</li>
+<li class="flex justify-between items-start border-b border-surface-variant pb-2 last:border-0 last:pb-0">
+<div>
+<p class="font-label-md text-label-md text-on-surface"><span class="text-primary mr-1">1x</span> Charcuterie Board</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Gluten-free crackers</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-auto pt-2 flex gap-2">
+<button class="flex-1 bg-surface-variant text-on-surface font-label-md text-label-md py-3 rounded-lg hover:bg-surface-dim transition-colors">
+                            Print Ticket
+                        </button>
+<button class="flex-[2] bg-primary-container text-on-primary-container font-label-md text-label-md py-3 rounded-lg hover:bg-primary transition-colors hover:text-on-primary flex items-center justify-center gap-2 border-b-2 border-primary active:border-b-0 active:translate-y-[2px]">
+<span class="material-symbols-outlined">room_service</span>
+                            Mark Ready
+                        </button>
+</div>
+</div>
+</div>
+<!-- Bottom spacing for mobile if needed -->
+<div class="h-16 md:hidden"></div>
+</div>
+</main>
+</body></html>
