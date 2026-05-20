@@ -55,26 +55,19 @@ export const OrderProvider = ({ children }) => {
   ]);
 
   const [cart, setCart] = useState([]);
-  const [activeCustomerOrder, setActiveCustomerOrder] = useState(null);
+  const [activeCustomerOrder, setActiveCustomerOrder] = useState({
+    id: 4092,
+    status: 'Preparing', // Received, Accepted, Preparing, Ready, Served
+    time: '1:20 PM',
+    expectedTime: '1:45 PM',
+    etaMins: 12,
+    items: [
+      { name: 'Avocado Super Greens', quantity: 1, note: 'No onions', price: 14.50, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMsjzWe9CWiG_gOnffdvfT0axrxdat-ts3cFqu6LBtSN7GgraQs8q3-psmU5gzU9iBstYqJW-FWLzC1ULuMTc0ZzNeWJkKFTG3tTPzugEYGZFLgUuphTforBX4Yocu7Pzvb-BcEnnu7xId0phMklUFXY-yc0X93q7CX8e0XCq-fzBNzWByWSqgrr3FX9-_dP0ENveC5mZUVACmJsVOpPQD3zYAzQdkuaD-SB1IySoy-MyGzU8X7jis2r3FiZ_hLckw66xGR-W1Xsg' },
+      { name: 'Bistro Classic Burger', quantity: 1, note: 'Medium Rare', price: 18.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVh0CRjkJP9HTkEwjHZO9eJbieJmpFWGitcW0zfHCMHIIvkmPJ-ii6bTJbe8Idu--8KrG3IGh_DpxxKwlTIBKaRHJISKFIeppFxquWb1igPavW2LZGRUPW7BJwCBofzqmUvKItgETGhIr5cXrrg7EN9YDiGK9xsdbL6MMUKrdmyY5IDrfWMx8eqNowyu8YruojkTrf9SW5xFqGCqukXy_SlziFwBbEWuAIoe8F338i9bgaXGpVVA2JOoyioQ6KmvGq0SrpCUQzzbc' }
+    ],
+    total: 32.50
+  });
   const [tableNumber, setTableNumber] = useState('7');
-
-  // Load active tracking order if there is none
-  useEffect(() => {
-    if (!activeCustomerOrder) {
-      setActiveCustomerOrder({
-        id: 4092,
-        status: 'Preparing', // Received, Accepted, Preparing, Ready, Served
-        time: '1:20 PM',
-        expectedTime: '1:45 PM',
-        etaMins: 12,
-        items: [
-          { name: 'Avocado Super Greens', quantity: 1, note: 'No onions', price: 14.50, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMsjzWe9CWiG_gOnffdvfT0axrxdat-ts3cFqu6LBtSN7GgraQs8q3-psmU5gzU9iBstYqJW-FWLzC1ULuMTc0ZzNeWJkKFTG3tTPzugEYGZFLgUuphTforBX4Yocu7Pzvb-BcEnnu7xId0phMklUFXY-yc0X93q7CX8e0XCq-fzBNzWByWSqgrr3FX9-_dP0ENveC5mZUVACmJsVOpPQD3zYAzQdkuaD-SB1IySoy-MyGzU8X7jis2r3FiZ_hLckw66xGR-W1Xsg' },
-          { name: 'Bistro Classic Burger', quantity: 1, note: 'Medium Rare', price: 18.00, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCVh0CRjkJP9HTkEwjHZO9eJbieJmpFWGitcW0zfHCMHIIvkmPJ-ii6bTJbe8Idu--8KrG3IGh_DpxxKwlTIBKaRHJISKFIeppFxquWb1igPavW2LZGRUPW7BJwCBofzqmUvKItgETGhIr5cXrrg7EN9YDiGK9xsdbL6MMUKrdmyY5IDrfWMx8eqNowyu8YruojkTrf9SW5xFqGCqukXy_SlziFwBbEWuAIoe8F338i9bgaXGpVVA2JOoyioQ6KmvGq0SrpCUQzzbc' }
-        ],
-        total: 32.50
-      });
-    }
-  }, []);
 
   const addToCart = (item) => {
     setCart((prev) => {

@@ -29,8 +29,7 @@ const AdminAnalytics = () => {
           <ul className="space-y-1">
             <li>
               <button 
-                onClick={() => navigate('/dashboard')}
-                className="w-full text-left flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-all font-label-caps text-xs uppercase font-bold"
+                className="w-full text-left flex items-center gap-3 bg-primary-container text-on-primary-container rounded-r-full py-3 px-6 mr-4 font-label-caps text-xs uppercase font-bold pointer-events-none"
               >
                 <span className="material-symbols-outlined">dashboard</span>
                 Dashboard
@@ -55,8 +54,19 @@ const AdminAnalytics = () => {
               </button>
             </li>
             <li>
-              {/* Active State */}
-              <button className="w-full text-left flex items-center gap-3 bg-primary-container text-on-primary-container rounded-r-full py-3 px-6 mr-4 font-label-caps text-xs uppercase font-bold pointer-events-none">
+              <button 
+                onClick={() => navigate('/tracking')}
+                className="w-full text-left flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-all font-label-caps text-xs uppercase font-bold"
+              >
+                <span className="material-symbols-outlined">route</span>
+                Order Tracking
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => navigate('/analytics')}
+                className="w-full text-left flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-all font-label-caps text-xs uppercase font-bold"
+              >
                 <span className="material-symbols-outlined icon-fill">analytics</span>
                 Analytics
               </button>
@@ -90,8 +100,8 @@ const AdminAnalytics = () => {
               <ul className="space-y-2">
                 <li>
                   <button onClick={() => setMobileMenuOpen(false)} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg bg-primary-container text-on-primary-container font-label-caps text-xs uppercase font-bold">
-                    <span className="material-symbols-outlined">analytics</span>
-                    Analytics
+                    <span className="material-symbols-outlined">dashboard</span>
+                    Dashboard
                   </button>
                 </li>
                 <li>
@@ -102,8 +112,20 @@ const AdminAnalytics = () => {
                 </li>
                 <li>
                   <button onClick={() => { setMobileMenuOpen(false); navigate('/menu'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-surface-variant/35 font-label-caps text-xs uppercase font-bold">
-                    <span className="material-symbols-outlined">menu_book</span>
-                    Customer Menu
+                    <span className="material-symbols-outlined">edit_note</span>
+                    Menu Editor
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { setMobileMenuOpen(false); navigate('/tracking'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-surface-variant/35 font-label-caps text-xs uppercase font-bold">
+                    <span className="material-symbols-outlined">route</span>
+                    Order Tracking
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { setMobileMenuOpen(false); navigate('/analytics'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-surface-variant/35 font-label-caps text-xs uppercase font-bold">
+                    <span className="material-symbols-outlined icon-fill">analytics</span>
+                    Analytics
                   </button>
                 </li>
               </ul>
@@ -120,9 +142,9 @@ const AdminAnalytics = () => {
       )}
 
       {/* Main Content Area */}
-      <main className="flex-1 md:ml-64 h-full overflow-y-auto flex flex-col relative bg-background pb-12">
+      <main className="flex-1 min-w-0 md:ml-64 h-full overflow-y-auto flex flex-col relative bg-[#f9f9f8] pb-12">
         {/* Header Actions */}
-        <header className="flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop py-6 sticky top-0 bg-background/95 backdrop-blur-md z-30 border-b border-outline-variant/10">
+        <header className="flex justify-between items-center px-4 md:px-8 py-6 sticky top-0 bg-[#f9f9f8]/95 backdrop-blur-md z-30 border-b border-outline-variant/10">
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setMobileMenuOpen(true)}

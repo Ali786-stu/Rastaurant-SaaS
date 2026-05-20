@@ -86,7 +86,10 @@ const StaffDashboard = () => {
             </button>
           </li>
           <li>
-            <button className="w-full text-left flex items-center gap-3 bg-primary-container text-on-primary-container rounded-r-full py-3 px-6 mr-4 font-label-caps text-xs uppercase font-bold">
+            <button 
+              onClick={() => navigate('/dashboard')}
+              className="w-full text-left flex items-center gap-3 bg-primary-container text-on-primary-container rounded-r-full py-3 px-6 mr-4 font-label-caps text-xs uppercase font-bold"
+            >
               <span className="material-symbols-outlined">pending_actions</span>
               Live Orders
             </button>
@@ -98,6 +101,15 @@ const StaffDashboard = () => {
             >
               <span className="material-symbols-outlined">edit_note</span>
               Menu Editor
+            </button>
+          </li>
+          <li>
+            <button 
+              onClick={() => navigate('/tracking')}
+              className="w-full text-left flex items-center gap-3 text-on-surface-variant hover:bg-surface-variant/30 rounded-r-full py-3 px-6 mr-4 transition-colors font-label-caps text-xs uppercase font-bold"
+            >
+              <span className="material-symbols-outlined">route</span>
+              Order Tracking
             </button>
           </li>
           <li>
@@ -146,20 +158,32 @@ const StaffDashboard = () => {
               <ul className="space-y-2">
                 <li>
                   <button onClick={() => { setMobileMenuOpen(false); navigate('/analytics'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-surface-variant/35 font-label-caps text-xs uppercase font-bold">
-                    <span className="material-symbols-outlined">analytics</span>
-                    Analytics
+                    <span className="material-symbols-outlined">dashboard</span>
+                    Dashboard
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => setMobileMenuOpen(false)} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg bg-primary-container text-on-primary-container font-label-caps text-xs uppercase font-bold">
+                  <button onClick={() => { setMobileMenuOpen(false); navigate('/dashboard'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg bg-primary-container text-on-primary-container font-label-caps text-xs uppercase font-bold">
                     <span className="material-symbols-outlined">pending_actions</span>
                     Live Orders
                   </button>
                 </li>
                 <li>
                   <button onClick={() => { setMobileMenuOpen(false); navigate('/menu'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-surface-variant/35 font-label-caps text-xs uppercase font-bold">
-                    <span className="material-symbols-outlined">menu_book</span>
-                    Customer Menu
+                    <span className="material-symbols-outlined">edit_note</span>
+                    Menu Editor
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { setMobileMenuOpen(false); navigate('/tracking'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-surface-variant/35 font-label-caps text-xs uppercase font-bold">
+                    <span className="material-symbols-outlined">route</span>
+                    Order Tracking
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { setMobileMenuOpen(false); navigate('/analytics'); }} className="w-full text-left flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-surface-variant/35 font-label-caps text-xs uppercase font-bold">
+                    <span className="material-symbols-outlined">analytics</span>
+                    Analytics
                   </button>
                 </li>
               </ul>
@@ -176,10 +200,10 @@ const StaffDashboard = () => {
       )}
 
       {/* Main Content Area */}
-      <main className="flex-1 md:ml-64 flex flex-col h-full bg-background relative">
+      <main className="flex-1 min-w-0 md:ml-64 flex flex-col h-full bg-[#f9f9f8] relative">
         {/* TopAppBar */}
-        <header className="bg-surface/80 backdrop-blur-md fixed top-0 w-full md:w-[calc(100%-16rem)] z-30 border-b border-outline-variant/30 flex justify-between items-center px-container-margin-mobile md:px-container-margin-desktop h-16">
-          <div className="flex items-center gap-4">
+        <header className="bg-white/90 backdrop-blur-md sticky top-0 w-full z-30 border-b border-outline-variant/10 flex justify-between items-center px-4 md:px-8 h-16 shrink-0">
+          <div className="flex items-center gap-3">
             {/* Mobile Menu Icon */}
             <button 
               onClick={() => setMobileMenuOpen(true)}
@@ -187,7 +211,7 @@ const StaffDashboard = () => {
             >
               <span className="material-symbols-outlined text-2xl">menu</span>
             </button>
-            <h1 className="font-headline-md text-xl font-bold text-primary md:hidden">WingsRiver</h1>
+            <h1 className="font-headline-md text-xl font-extrabold text-primary md:hidden tracking-tight">WingsRiver</h1>
             <h1 className="font-headline-md text-xl font-bold text-on-surface hidden md:block">Kitchen Live Orders</h1>
           </div>
           <div className="flex items-center gap-4">
@@ -198,18 +222,18 @@ const StaffDashboard = () => {
               <span className="material-symbols-outlined text-[16px]">monitoring</span>
               Go to Analytics
             </button>
-            <button className="relative p-2 text-on-surface-variant hover:bg-surface-variant/20 rounded-full transition-colors flex items-center justify-center">
+            <button className="relative p-2 text-on-surface-variant hover:bg-surface-variant/25 rounded-full transition-colors flex items-center justify-center">
               <span className="material-symbols-outlined text-2xl">notifications_active</span>
-              <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full animate-pulse border-2 border-surface"></span>
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full animate-pulse border border-white"></span>
             </button>
           </div>
         </header>
 
         {/* Scrollable Content */}
-        <div className="flex-1 mt-16 overflow-y-auto custom-scrollbar p-container-margin-mobile md:p-container-margin-desktop">
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-8">
           {/* Filters Bar */}
-          <div className="mb-6 sticky top-0 bg-background/95 backdrop-blur z-10 py-2 border-b border-surface-variant">
-            <div className="flex gap-2 overflow-x-auto custom-scrollbar pb-2 items-center">
+          <div className="mb-6 sticky top-0 bg-[#f9f9f8]/95 backdrop-blur z-10 py-2 border-b border-outline-variant/10 -mx-4 px-4">
+            <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-1.5 items-center">
               {['All', 'Pending', 'Preparing', 'Ready'].map((status) => (
                 <button
                   key={status}
@@ -243,9 +267,9 @@ const StaffDashboard = () => {
               {filteredOrders.map((order) => (
                 <div 
                   key={order.id} 
-                  className={`bg-surface-container-lowest rounded-xl card-shadow p-4 flex flex-col gap-4 border-l-4 transition-all duration-300 ${
-                    order.status === 'Pending' ? 'border-error shadow-md' :
-                    order.status === 'Preparing' ? 'border-primary' : 'border-secondary'
+                  className={`bg-white rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.03)] border border-outline-variant/10 p-4 flex flex-col gap-4 border-l-4 transition-all duration-300 ${
+                    order.status === 'Pending' ? 'border-l-error' :
+                    order.status === 'Preparing' ? 'border-l-primary' : 'border-l-secondary'
                   }`}
                 >
                   {/* Card Header */}
